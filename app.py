@@ -30,12 +30,17 @@ def upload():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-        if request.method == 'POST':
-           message = request.form['message']
-           data = [message] 
-        return(str(data))
     
-     return render_template("predict.html")
+    count = 0
+    for filename in os.listdir(destination):
+        filepath = os.path.join(destination, filename)
 
+        with open(filepath, 'r') as fp:
+            for line in fp:
+                #String to search for:
+                count += line.count('<some_string>')  
+    
+   print(count) 
+    
 if __name__ == "__main__":
     app.run(port=4555, debug=True)

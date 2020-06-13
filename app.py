@@ -28,5 +28,13 @@ def upload():
 
     return render_template("complete.html")
 
+@app.route('/predict',methods=['POST'])
+def predict():
+        if request.method == 'POST':
+           message = request.form['message']
+           data = [message] 
+        return(str(data))
+
+
 if __name__ == "__main__":
     app.run(port=4555, debug=True)

@@ -35,7 +35,7 @@ def predict():
            data = [message] 
         return(str(data))
     
-     return render_template("/predict.html")
+     return render_template("predict.html")
 
 if __name__ == "__main__":
     app.run(port=4555, debug=True)

@@ -40,7 +40,7 @@ def predict():
                 #String to search for:
                 count += line.count('<some_string>')  
     
-   print(count) 
+      print(count) 
     
 if __name__ == "__main__":
     app.run(port=4555, debug=True)

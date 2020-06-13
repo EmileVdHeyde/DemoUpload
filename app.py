@@ -25,27 +25,9 @@ def upload():
         destination = "/".join([target, filename])
         print(destination)
         file.save(destination)
-        
-     if request.method == 'POST':
-        f = request.files['file']
-        f.save(secure_filename(f.filename))
-        content = f.read()
+        content = file.read()
 
-    return render_template("complete.html", content=content)
-
-#@app.route('/predict',methods=['POST'])
-#def predict():
-    
- #   count = 0
-  #  for filename in os.listdir(destination):
-   #     filepath = os.path.join(destination, filename)
-
-    #    with open(filepath, 'r') as fp:
-     #       for line in fp:
-      #          #String to search for:
-       #         count += line.count('<some_string>')  
-    
-      #print(count) 
+    return render_template("complete.html", text=content)
     
 if __name__ == "__main__":
     app.run(port=4555, debug=True)

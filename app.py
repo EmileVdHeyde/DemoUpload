@@ -26,8 +26,16 @@ def upload():
         print(destination)
         file.save(destination)
         output= file.read()
+        
+   # Create variable for uploaded file
+        f = request.files['fileupload']
+    #store the file contents as a string
+        fstring = f.read()
+   #create list of dictionaries keyed by header row
+        csv_dicts = [{k: v for k, v in row.items()} for row in csv.DictReader(fstring.splitlines(), skipinitialspace=True)]
 
-    return(str(output))
+
+        return(str(csv_dicts))
     #return render_template("complete.html", output=output)
     
 if __name__ == "__main__":

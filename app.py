@@ -13,7 +13,7 @@ def index():
 
 @app.route("/upload", methods=['POST'])
 def upload():
-    target = os.path.join(APP_ROOT, 'images/')
+    target = os.path.join(APP_ROOT, '/')
     print(target)
 
     if not os.path.isdir(target):
@@ -28,7 +28,7 @@ def upload():
         output= file.read()
         my_prediction=file
         
-        return(str(my_prediction) + "  --->  Probability of Reject is: " )
+        return( print(target) + "  --->  Probability of Reject is: " )
     #return render_template("complete.html", output=output)
     
 if __name__ == "__main__":

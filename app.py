@@ -28,7 +28,7 @@ def upload():
         output= file.read()
         my_prediction=file
         
-        return( print(target) + "  --->  Probability of Reject is: " )
+        return( target + "  --->  Probability of Reject is: " )
     #return render_template("complete.html", output=output)
     
 if __name__ == "__main__":

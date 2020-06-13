@@ -25,9 +25,9 @@ def upload():
         destination = "/".join([target, filename])
         print(destination)
         file.save(destination)
-        content = file.read()
+        output= file.read()
 
-    return render_template("complete.html", text=content)
+    return render_template("complete.html", output=output)
     
 if __name__ == "__main__":
     app.run(port=4555, debug=True)
